@@ -1,0 +1,21 @@
+version: 0.2
+env:
+variables:
+key: "value"
+phases:
+install:
+runtime-versions:
+java: openjdk8
+pre_build:
+commands:
+- echo Nothing to do in the pre_build phase...
+build:
+commands:
+- echo Build started on `date`
+- mvn install
+finally:
+- echo Run this even if the build commands fail.
+artifacts:
+files:
+- target/myApp.jar
+name: myApp.jar-$(date +%Y-%m-%d)
